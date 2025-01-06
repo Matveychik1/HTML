@@ -1,64 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NOWIY GOD</title>
+    <title>Document</title>
     <style>
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(219, 150, 0);
+        }
+
+        header {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            height: 100vh;
-            background-color: #f3f3f3;
-            flex-grow: 1;
-            border: 2px solid black;
+            padding: 22px;
+            background-color: white;
+            color: #fff;
+        }
 
+        header .logo img {
+            position: absolute;
+            top: 8px;
         }
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-gap: 10px;
-            max-width: 800px;
-            flex-grow: 1;
-            border: 2px solid black;
 
+        nav a {
+            color: black;
+            text-decoration: none;
+            margin: 6px;
+            text-transform: uppercase;
         }
-        .grid-item {
-            position: relative;
-            background-color: #ccc;
-            overflow: hidden;
-         
-            border-radius: 8px;
+
+        nav a:hover {
+            color: rgb(108, 181, 153);
         }
-        .grid-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+
+        h1 {
+            color: rgb(84, 52, 61);
+            font-size: 52px;
+            text-align: center;
+            margin-top: 0;
         }
-        .grid-item:nth-child(1) {
-            grid-column: span 2;
-            grid-row: span 2;
+
+        h3 .color {
+            color: rgb(208, 255, 0)
         }
-        .grid-item:nth-child(6) {
-            grid-column: span 2;
+
+        .carousel {
+            height: 700px;
+            background-image: url("./images/tea_back.jpg");
+            background-size: cover;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
+
+        h2 {
+            text-align: center;
+        }
+
+        .products {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px;
+            
+        }
+
+        .products>div {
+            background-color: rgb(207, 221, 178);
+            border-radius: 10px;
+            padding: 90px;
+        }
+
+        footer {
+            text-align: center;
+            background-color: rgb(84, 52, 61);
+            color: white;
+            padding: 30px;
+            
+        }
+
+        .products img {
+        width: 100px; 
+        height: 100px; 
+        object-fit: contain; 
+    }
     </style>
 </head>
+
 <body>
-    <div class="grid-container">
-        <div class="grid-item"><img src="https://storage.googleapis.com/pod_public/1300/179853.jpg" alt="Image 1"></div>
-        <div class="grid-item"><img src="https://s3-eu-north-1.amazonaws.com/py3.visitsweden.com/original_images/f5030568_IBSweb.jpg" alt="Image 2"></div>
-        <div class="grid-item"><img src="https://www.stralendzweden.nl/wp-content/uploads/2020/03/Safsen-Resort-dorpje-avond-768x549.jpg" alt="Image 3"></div>
-        <div class="grid-item"><img src="https://hetzweedsehuis.nl/wp-content/uploads/2015/11/kerst-.jpg" alt="Image 4"></div>
-        <div class="grid-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX2zZc5N8oRbq9zZ0e_T-ZmTtIrsReJZZl3RkgDBoW3OQoBGJrpfK8dcgDypO0QWKrjFk&usqp=CAU" alt="Image 5"></div>
-        <div class="grid-item"><img src="https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/t/n/tnc_16026894.jpg?crop=0%2C437%2C3986%2C2491&wid=640&hei=400&scl=6.228125" alt="Image 6"></div>
-        <div class="grid-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBNjq66FcpQzSs0u5hlZ8NRkoF8qXKCEQ2OA&s" alt="Image 7"></div>
-        <div class="grid-item"><img src="https://cdn.prod.website-files.com/624ac40503a527cf47af4192/6568745aae3f1ce79ce3725f_realistic-winter-photo.png" alt="Image 8"></div>
-        <div class="grid-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwAPsywZ-g7HM2900qqzaGzu0EqerfGIuZkg&s" alt="Image 9"></div>
-        <div class="grid-item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6DsusUbSTS4NL3Y7Xtohct4DjmwYMf1u6vQ&s" alt="Image 10"></div>
-    </div>
+    <header>
+        <div class="logo">
+            <img height="80"
+                src="https://cdn.pixabay.com/photo/2022/07/21/15/06/banana-7336435_1280.png"
+                alt="">
+        </div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Products</a>
+            <a href="#">Categories</a>
+            <a href="#">About</a>
+            <a href="#">Support</a>
+        </nav>
+    </header>
+    <section class="carousel">
+        <h3><span class="color">Welcome to</span> BANANAS House</h3>
+        <h1>Organic & Quality<br>BANANI AFIGENI/PYSHKA</h1>
+    </section>
+
+    <section>
+        <h2>Products</h2>
+        <div class="products">
+            <div>
+                <img src="https://images.vexels.com/media/users/3/143061/isolated/preview/aaf71ed4e387a6838e1c521fbecde77a-banana-icon-fruit.png"
+                    alt="">
+                <h3>BANAN normal</h3>
+                <p>Price: 1$</p>
+            </div>
+            <div>
+                <img src="https://seeklogo.com/images/B/bananas-logo-D84FBE087F-seeklogo.com.png"
+                    alt="">
+                <h3>BANAN small</h3>
+                <p>Price: 2$</p>
+            </div>
+            <div>
+                <img src="https://static.vecteezy.com/system/resources/previews/019/603/967/non_2x/banana-graphic-clipart-design-free-png.png"
+                    alt="">
+                <h3>BANAN big</h3>
+                <p>Price: 22$</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div>&copy; 2025 BANANAS DELALS YA SAMS MATEO 4441 1110 4230 4315cards</div>
+    </footer>
 </body>
+
 </html>
