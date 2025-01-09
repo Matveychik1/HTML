@@ -1,144 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
+Console.WriteLine("Enter your email:");
+string email = Console.ReadLine();
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: rgb(219, 150, 0);
-        }
 
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 22px;
-            background-color: white;
-            color: #fff;
-        }
+if (!email.Contains("@"))
+{
+    Console.WriteLine("Dont have '@'.");
+    return;
+}
 
-        header .logo img {
-            position: absolute;
-            top: 8px;
-        }
+Console.WriteLine(email.Replace('.', '_'));
 
-        nav a {
-            color: black;
-            text-decoration: none;
-            margin: 6px;
-            text-transform: uppercase;
-        }
-
-        nav a:hover {
-            color: rgb(108, 181, 153);
-        }
-
-        h1 {
-            color: rgb(84, 52, 61);
-            font-size: 52px;
-            text-align: center;
-            margin-top: 0;
-        }
-
-        h3 .color {
-            color: rgb(208, 255, 0)
-        }
-
-        .carousel {
-            height: 700px;
-            background-image: url("./images/tea_back.jpg");
-            background-size: cover;
-
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        h2 {
-            text-align: center;
-        }
-
-        .products {
-            display: flex;
-            justify-content: space-around;
-            margin: 20px;
-            
-        }
-
-        .products>div {
-            background-color: rgb(207, 221, 178);
-            border-radius: 10px;
-            padding: 90px;
-        }
-
-        footer {
-            text-align: center;
-            background-color: rgb(84, 52, 61);
-            color: white;
-            padding: 30px;
-            
-        }
-
-        .products img {
-        width: 100px; 
-        height: 100px; 
-        object-fit: contain; 
-    }
-    </style>
-</head>
-
-<body>
-    <header>
-        <div class="logo">
-            <img height="80"
-                src="https://cdn.pixabay.com/photo/2022/07/21/15/06/banana-7336435_1280.png"
-                alt="">
-        </div>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">Products</a>
-            <a href="#">Categories</a>
-            <a href="#">About</a>
-            <a href="#">Support</a>
-        </nav>
-    </header>
-    <section class="carousel">
-        <h3><span class="color">Welcome to</span> BANANAS House</h3>
-        <h1>Organic & Quality<br>BANANI AFIGENI/PYSHKA</h1>
-    </section>
-
-    <section>
-        <h2>Products</h2>
-        <div class="products">
-            <div>
-                <img src="https://images.vexels.com/media/users/3/143061/isolated/preview/aaf71ed4e387a6838e1c521fbecde77a-banana-icon-fruit.png"
-                    alt="">
-                <h3>BANAN normal</h3>
-                <p>Price: 1$</p>
-            </div>
-            <div>
-                <img src="https://seeklogo.com/images/B/bananas-logo-D84FBE087F-seeklogo.com.png"
-                    alt="">
-                <h3>BANAN small</h3>
-                <p>Price: 2$</p>
-            </div>
-            <div>
-                <img src="https://static.vecteezy.com/system/resources/previews/019/603/967/non_2x/banana-graphic-clipart-design-free-png.png"
-                    alt="">
-                <h3>BANAN big</h3>
-                <p>Price: 22$</p>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div>&copy; 2025 BANANAS DELALS YA SAMS MATEO 4441 1110 4230 4315cards</div>
-    </footer>
-</body>
-
-</html>
+if (email.Any(char.IsDigit))
+{
+    Console.WriteLine($"LOADING ADRESS EMAIL: {email}");
+}
+else
+{
+    Console.WriteLine("ERROR: IN EMAIL ADRESS DONT HAVE NUMBER.");
+}
+    
