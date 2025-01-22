@@ -1,21 +1,80 @@
-Console.WriteLine("Enter your email:");
-string email = Console.ReadLine();
+using System;
+using System.Collections.Generic;
 
-
-if (!email.Contains("@"))
+class Program
 {
-    Console.WriteLine("Dont have '@'.");
-    return;
-}
+    static void Main()
+    {
+       
+        Dictionary<string, string> contacts = new Dictionary<string, string>
+        {
+            { "380631234567", "ABDUL" },
+            { "380671234567", "KAZAH" },
+            { "380931234567", "PETRASIAN" },
+            { "380501234567", "BARIGA" },
+            { "380991234567", "IVAN BANDIT" },
+            { "380731234567", "RAZVLEKALOVKA" },
+            { "380661234567", "NEGER" },
+            { "380921234567", "BABYS" },
+            { "380951234567", "OKYROK" },
+            { "380681234567", "GROSHI" }
+        };
 
-Console.WriteLine(email.Replace('.', '_'));
+        while (true)
+        {
+            Console.WriteLine("Menu:");
+            Console.WriteLine("1. Find a name by phone number");
+            Console.WriteLine("2. Delete a contact by phone number");
+            Console.WriteLine("3. Show all contacts");
+            Console.WriteLine("4. Exit");
+            Console.Write("Choose an option 1-4: ");
 
-if (email.Any(char.IsDigit))
-{
-    Console.WriteLine($"LOADING ADRESS EMAIL: {email}");
+            string choice = Console.ReadLine();
+
+            switch (choice)
+            {
+                case "1":
+                    Console.Write("Enter the phone number: ");
+                    string numberToFind = Console.ReadLine();
+                    if (contacts.TryGetValue(numberToFind, out string name))
+                    {
+                        Console.WriteLine($"Name: {name}");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Contact not found.");
+                    }
+                    break;
+
+                case "2":
+                    Console.Write("Enter the phone number to delete: ");
+                    string numberToDelete = Console.ReadLine();
+                    if (contacts.Remove(numberToDelete))
+                    {
+                        Console.WriteLine("Contact deleted.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Contact not found.");
+                    }
+                    break;
+
+                case "3":
+                    Console.WriteLine("Contact list:");
+                    foreach (var contact in contacts)
+                    {
+                        Console.WriteLine($"Phone: {contact.Key}, Name: {contact.Value}");
+                    }
+                    break;
+
+                case "4":
+                    Console.WriteLine("Goodbye!");
+                    return;
+
+                default:
+                    Console.WriteLine("Invalid choice. Please try again.");
+                    break;
+            }
+        }
+    }
 }
-else
-{
-    Console.WriteLine("ERROR: IN EMAIL ADRESS DONT HAVE NUMBER.");
-}
-    
